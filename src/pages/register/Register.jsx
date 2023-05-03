@@ -1,9 +1,10 @@
 import React from 'react';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 
 const Register = () => {
     return (
         <div>
-            <h1>register</h1>
+            this is register
         </div>
     );
 };
