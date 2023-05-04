@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './RecipeCard.css'
 import { BsFillSuitHeartFill } from "react-icons/bs";
+import { Rating } from '@smastrom/react-rating';
+import '@smastrom/react-rating/style.css'
 
 const RecipeCard = ({ recipe }) => {
     const { name, ingredients, method, image, rating } = recipe;
@@ -37,14 +39,15 @@ const RecipeCard = ({ recipe }) => {
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div>
-                            rating
+                    <hr />
+                    <div className='d-flex  justify-content-between mt-3'>
 
+                        <div className='flex-grow-1 d-flex align-items-center'>
+                            <Rating style={{ maxWidth: 180 }}
+                                value={Math.round(rating || 0)} readOnly />
+                            <span>{rating}</span>
                         </div>
-                        <div>
-                            <button onClick={handleClick} disabled={isDisabled} className='btn btn-color'><BsFillSuitHeartFill /> </button>
-                        </div>
+                        <button onClick={handleClick} disabled={isDisabled} className='btn btn-color'><BsFillSuitHeartFill /> </button>
                     </div>
                 </div>
             </div>
