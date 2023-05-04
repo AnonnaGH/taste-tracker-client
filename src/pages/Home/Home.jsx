@@ -1,6 +1,7 @@
 import React from 'react';
 import heroImg from '../../assets/hero-img.png';
 import './Home.css'
+import Chef from './chef';
 
 const Home = () => {
     return (
@@ -16,6 +17,10 @@ const Home = () => {
                 <div className="col-md-6 text-center">
                     <img className='img-fluid' src={heroImg} alt="" />
                 </div>
+            </div>
+
+            <div className="row">
+                <Chef></Chef>
             </div>
         </div>
     );
