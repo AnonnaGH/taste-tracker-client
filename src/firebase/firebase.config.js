@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyD-s_qPEUSoV2VUCFOT9l6TtgjnT1-m9sY",
-    authDomain: "taste-tracker.firebaseapp.com",
-    projectId: "taste-tracker",
-    storageBucket: "taste-tracker.appspot.com",
-    messagingSenderId: "333133019447",
-    appId: "1:333133019447:web:cf7b0ce519202686e902b2"
+    apiKey: import.meta.env.VITE_APIKEY,
+    authDomain: import.meta.env.VITE_AUTHDOMAIN,
+    projectId: import.meta.env.VITE_PROJECTID,
+    storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+    messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+    appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase
