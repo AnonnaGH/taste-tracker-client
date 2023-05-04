@@ -1,0 +1,19 @@
+.brand-color-text {
+    color: #F17156;
+}
+
+.brand-color-bg {
+    background-color: #F17156;
+}
+
+.btn-color {
+    background-color: #10984d;
+    color: white;
+    font-weight: 700;
+}
+
+.btn-color:hover {
+    background-color: #06612e;
+    color: white;
+    font-weight: 700;
+}
