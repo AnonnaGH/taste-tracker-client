@@ -2,6 +2,7 @@ import React from 'react';
 import heroImg from '../../assets/hero-img.png';
 import './Home.css'
 import Chef from './chef';
+import PostSection from './PostSection';
 
 const Home = () => {
     return (
@@ -22,6 +23,8 @@ const Home = () => {
             <div className="row">
                 <Chef></Chef>
             </div>
+
+            <PostSection></PostSection>
         </div>
     );
 };

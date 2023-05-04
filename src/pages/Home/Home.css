@@ -17,3 +17,11 @@
     color: white;
     font-weight: 700;
 }
+
+.post-section-bg {
+    background-image: url('https://iasri.icar.gov.in/wp-content/uploads/2017/08/food-1.png');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
