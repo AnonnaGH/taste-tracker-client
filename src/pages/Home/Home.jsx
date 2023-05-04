@@ -3,6 +3,7 @@ import heroImg from '../../assets/hero-img.png';
 import './Home.css'
 import Chef from './chef';
 import PostSection from './PostSection';
+import AskQuesSection from './AskQuesSection';
 
 const Home = () => {
     return (
@@ -25,6 +26,7 @@ const Home = () => {
             </div>
 
             <PostSection></PostSection>
+            <AskQuesSection></AskQuesSection>
         </div>
     );
 };
