@@ -1,12 +1,15 @@
 import React from 'react';
+import Pdf from "react-to-pdf";
 
 const Blog = () => {
+    const ref = React.createRef();
     return (
         <div>
-            <div className='header-bg'>
 
-            </div>
             <div className="row container mx-auto">
+                <Pdf targetRef={ref} filename="blog.pdf">
+                    {({ toPdf }) => <button className="btn btn-success" onClick={toPdf}>Generate Pdf</button>}
+                </Pdf>
                 <div className='my-5 border'>
                     <h1 className="font-bold p-4">1.Tell us the differences between uncontrolled and controlled components.
                     </h1>
@@ -31,7 +34,7 @@ const Blog = () => {
                         In general, using controlled components is recommended in most cases, as they provide better control over the state of the form and allow for better validation and event handling. However, there are cases where uncontrolled components may be useful, especially when dealing with legacy code or when working with third-party libraries that require uncontrolled inputs.
                     </p>
                 </div>
-                <div className="my-5 border">
+                <div className="my-5 border" ref={ref}>
                     <h1 className="font-bold p-4">2.How to validate React props using PropTypes
                     </h1>
                     <p className="bg-light p-4 ">

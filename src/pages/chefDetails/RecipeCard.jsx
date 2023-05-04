@@ -3,6 +3,9 @@ import './RecipeCard.css'
 import { BsFillSuitHeartFill } from "react-icons/bs";
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { FaHeart } from 'react-icons/fa';
 
 const RecipeCard = ({ recipe }) => {
     const { name, ingredients, method, image, rating } = recipe;
@@ -10,6 +13,16 @@ const RecipeCard = ({ recipe }) => {
 
     const handleClick = () => {
         setIsDisabled(true);
+        toast(
+            <div>
+                <span className='me-2'>the recipe is your favorite</span>
+                <FaHeart size={16} color="#E5522E" style={{ marginRight: '8px' }} />
+
+            </div>,
+            {
+                position: toast.POSITION.TOP_RIGHT
+            }
+        );
 
 
     };
@@ -49,6 +62,7 @@ const RecipeCard = ({ recipe }) => {
                         </div>
                         <button onClick={handleClick} disabled={isDisabled} className='btn btn-color'><BsFillSuitHeartFill /> </button>
                     </div>
+                    <ToastContainer />
                 </div>
             </div>
             <hr />
