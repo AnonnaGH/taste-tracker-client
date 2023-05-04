@@ -1,32 +1,45 @@
 import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
     return (
-        <div className='container-fluid'>
-            {/* <Navbar bg="light" expand="lg">
-                <Container fluid>
-                    <Navbar.Brand className='fw-bold'>Taste Tracker</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="navbarScroll" />
-                    <Navbar.Collapse id="navbarScroll">
-                        <div className="d-flex ms-auto">
-                            <Nav
-                                className="me-auto my-2 my-lg-0"
-                                style={{ maxHeight: '100px' }}
-                                navbarScroll
-                            >
-                                <Nav.Link href="#action1">Home</Nav.Link>
-                                <Nav.Link href="#action2">Blog</Nav.Link>
+        <div className='row login-bg'>
 
 
-                            </Nav>
 
-                            <Button className='mx-3' variant="outline-success">Register</Button>
-                            <Button variant="outline-success">Login</Button>
-                        </div>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar> */}
+            <div className="col-md-6 mx-auto border p-4 mt-4 border-success border-2 rounded mb-4">
+                <form className='pt-4'>
+                    <h1 className='text-center'>Register Please</h1>
+                    <div className="mb-3">
+                        <label className="form-label">Name</label>
+                        <input name='name' type="text" className="form-control" required />
+
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">Image url</label>
+                        <input name='photo' type="text" className="form-control" required />
+
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">Email address</label>
+                        <input name='email' type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required />
+
+                    </div>
+                    <div className="mb-3">
+                        <label for="exampleInputPassword1" className="form-label">Password</label>
+                        <input type="password" name="password" className="form-control" required />
+                    </div>
+                    <div className="mb-3">
+                        <label for="exampleInputPassword1" className="form-label">Confirm Password</label>
+                        <input type="password" name="confirm" className="form-control" required />
+                    </div>
+
+                    <button type="submit" className="btn btn-success w-100  text-center">Register</button>
+                </form>
+
+                <p className='mt-4'>Already a member? <Link to="/login" className="text-success fw-bold ">Login!</Link></p>
+            </div>
         </div>
     );
 };
