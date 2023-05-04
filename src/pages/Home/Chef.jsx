@@ -30,7 +30,7 @@ const Chef = () => {
                                 <p> Recipes: {chef.recipes}</p>
                                 <p>Likes: {chef.likes}</p>
                             </div>
-                            <Link to={`/chef/${chef.id}`}> <button className='btn btn-color'>View Recipes</button></Link>
+                            <Link to={`/chef/${chef.id}`}> <button className='btn btn-color w-100'>View Recipes</button></Link>
                         </div>
 
 
