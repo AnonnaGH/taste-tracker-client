@@ -34,6 +34,9 @@ const ChefDetails = () => {
                 </div>
             </div>
             <div>
+                <hr />
+                <h1 className='text-center'>Recipes</h1>
+                <hr />
                 {chefRecipe?.selectedRecipe?.map((recipe) => (
                     <RecipeCard key={recipe._id} recipe={recipe}></RecipeCard>
                 ))}

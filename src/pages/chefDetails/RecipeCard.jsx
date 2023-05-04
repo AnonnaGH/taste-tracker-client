@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './RecipeCard.css'
+import { BsFillSuitHeartFill } from "react-icons/bs";
 
 const RecipeCard = ({ recipe }) => {
     const { name, ingredients, method, image, rating } = recipe;
+    const [isDisabled, setIsDisabled] = useState(false);
+
+    const handleClick = () => {
+        setIsDisabled(true);
+
+
+    };
 
     return (
         <div>
             <div className="row alert alert-success mt-5">
+
                 <div className="col-md-6 p-0">
                     <img className='img-fluid h-100 p-4 ' src={image} alt="" />
                 </div>
@@ -28,24 +37,19 @@ const RecipeCard = ({ recipe }) => {
                             </div>
                         </div>
                     </div>
+                    <div>
+                        <div>
+                            rating
+
+                        </div>
+                        <div>
+                            <button onClick={handleClick} disabled={isDisabled} className='btn btn-color'><BsFillSuitHeartFill /> </button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <hr />
-            {/* <div className="card">
-                
-            </div>
-           
-            <div className='row '>
-                <div className='d-flex justify-content-evenly'>
-                    <div className="col-md-6">
-                        
-                    </div>
-                    <div className="col-md-6">
-                       
-                    </div>
-                </div>
 
-            </div> */}
 
 
         </div>

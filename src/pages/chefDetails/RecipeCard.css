@@ -1,3 +1,21 @@
 .food-card {
     background-color: #79a58170;
 }
+
+.btn-color {
+    background-color: #ffffff;
+    color: #ff0000;
+    /* other button styles */
+}
+
+.btn-color-disabled {
+    background-color: #ff0000;
+    color: #ffffff;
+    /* other button styles */
+}
+
+.btn-color-clicked {
+    background-color: #ff0000;
+    color: #ffffff;
+    /* other button styles */
+}
