@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import './Login.css'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 
 
@@ -9,7 +10,7 @@ import { AuthContext } from '../../provider/AuthProvider';
 
 const Login = () => {
 
-    const { signIn } = useContext(AuthContext);
+    const { signIn, signInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -39,6 +40,22 @@ const Login = () => {
             })
 
 
+
+
+    }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate(from), { replace: true };
+
+            })
+            .catch(error => {
+                console.log(error)
+            })
+
     }
     return (
         <div className='row login-bg'>
@@ -59,9 +76,16 @@ const Login = () => {
                     </div>
 
                     <button type="submit" className="btn btn-success w-100  text-center">Login</button>
+
+
                 </form>
+                <div className='mt-3 text-center'>
+                    <button onClick={handleGoogleSignIn} className="btn btn-primary"> <FaGoogle /> Sign in With Google</button>
+                    <button className="btn btn-dark ms-3"> <FaGithub /> Sign in With GitHub</button>
+                </div>
                 <p className='mt-4'>Not a member? <Link to="/register" className="text-success fw-bold ">Register</Link></p>
             </div>
+
         </div>
     );
 };
