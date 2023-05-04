@@ -4,7 +4,7 @@ import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 const Register = () => {
     return (
         <div className='container-fluid'>
-            <Navbar bg="light" expand="lg">
+            {/* <Navbar bg="light" expand="lg">
                 <Container fluid>
                     <Navbar.Brand className='fw-bold'>Taste Tracker</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
@@ -26,7 +26,7 @@ const Register = () => {
                         </div>
                     </Navbar.Collapse>
                 </Container>
-            </Navbar>
+            </Navbar> */}
         </div>
     );
 };
