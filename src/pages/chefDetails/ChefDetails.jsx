@@ -10,7 +10,7 @@ const ChefDetails = () => {
 
     return (
         <div>
-            <div>
+            <div className='mb-4'>
                 <h1 className='text-center text-success alert alert-success mt-3'>Chef Details</h1>
                 <div className='row my-4'>
                     <div className='col-md-4 text-center'>
