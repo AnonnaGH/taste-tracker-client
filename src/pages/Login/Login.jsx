@@ -10,7 +10,7 @@ import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
 
-    const { signIn, signInWithGoogle } = useContext(AuthContext);
+    const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -57,6 +57,19 @@ const Login = () => {
             })
 
     }
+    const handleGithubSignIn = () => {
+        signInWithGithub()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate(from), { replace: true };
+
+            })
+            .catch(error => {
+                console.log(error)
+            })
+
+    }
     return (
         <div className='row login-bg'>
 
@@ -81,7 +94,7 @@ const Login = () => {
                 </form>
                 <div className='mt-3 text-center'>
                     <button onClick={handleGoogleSignIn} className="btn btn-primary"> <FaGoogle /> Sign in With Google</button>
-                    <button className="btn btn-dark ms-3"> <FaGithub /> Sign in With GitHub</button>
+                    <button onClick={handleGithubSignIn} className="btn btn-dark ms-3"> <FaGithub /> Sign in With GitHub</button>
                 </div>
                 <p className='mt-4'>Not a member? <Link to="/register" className="text-success fw-bold ">Register</Link></p>
             </div>

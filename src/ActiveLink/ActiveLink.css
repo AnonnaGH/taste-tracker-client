@@ -1,0 +1,21 @@
+.active {
+    font-weight: 700;
+    text-decoration: none;
+    color: green;
+
+    padding: 10px;
+}
+
+.active:hover {
+    color: #11340b;
+}
+
+.inactive {
+    padding: 10px;
+    text-decoration: none;
+    color: #E5522E;
+}
+
+.inactive:hover {
+    color: #E5522E;
+}

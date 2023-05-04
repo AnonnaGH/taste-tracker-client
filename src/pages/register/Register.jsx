@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
-import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import Swal from 'sweetalert2'
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
+    const [error, setError] = useState('');
 
 
 
@@ -18,13 +19,26 @@ const Register = () => {
         const password = form.password.value;
         const confirm = form.confirm.value;
 
-        console.log(name, photo, email, password)
+        setError('');
+
+        if (password !== confirm) {
+            setError('Your password did not match')
+            return
+        } else if (password.length < 6) {
+            setError('Password must be at least 6 characters or longer ')
+            return
+        }
 
         createUser(email, password)
             .then((result) => {
                 const createdUser = result.user;
                 console.log(createdUser);
                 form.reset();
+                Swal.fire(
+                    'Success!',
+                    'Your Account has been created!',
+                    'success'
+                )
 
             })
             .catch((error) => {
@@ -64,6 +78,7 @@ const Register = () => {
                     </div>
 
                     <button type="submit" className="btn btn-success w-100  text-center">Register</button>
+                    <p className="text-danger bg-light p-3">{error}</p>
                 </form>
 
                 <p className='mt-4'>Already a member? <Link to="/login" className="text-success fw-bold ">Login!</Link></p>

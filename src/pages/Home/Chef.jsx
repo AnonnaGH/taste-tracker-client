@@ -7,7 +7,7 @@ const Chef = () => {
 
 
     useEffect(() => {
-        fetch("http://localhost:5000/chef")
+        fetch("https://taste-tracker-server-anonnagh.vercel.app/chef")
             .then((res) => res.json())
             .then((data) => setChef(data))
             .catch((error) => console.log(error));

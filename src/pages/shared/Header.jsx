@@ -3,6 +3,7 @@ import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import { FaUserCircle } from 'react-icons/fa';
+import ActiveLink from '../../ActiveLink/ActiveLink';
 const Header = () => {
 
     const { user, logOut } = useContext(AuthContext);
@@ -14,10 +15,10 @@ const Header = () => {
     };
 
     return (
-        <div>
-            <Navbar bg="light" expand="lg">
+        <div className='bg-red'>
+            <Navbar className='px-4' bg="light" expand="lg">
 
-                <Navbar.Brand className='fw-bold'>Taste Tracker</Navbar.Brand>
+                <Navbar.Brand className='fw-bold'> <span className="text-success">Taste</span>  <span className="text-danger">Tracker</span>     </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <div className="d-flex ms-auto">
@@ -26,8 +27,8 @@ const Header = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Link className='mx-4' to='/'>Home</Link>
-                            <Link to='/blog'>Blog</Link>
+                            <ActiveLink className='mx-4' to='/'>Home</ActiveLink>
+                            <ActiveLink to='/blog'>Blog</ActiveLink>
 
 
 

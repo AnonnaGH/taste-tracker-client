@@ -89,6 +89,27 @@ const Blog = () => {
                 </div>
 
 
+                <div className="my-5 border">
+                    <h1 className="font-bold p-4">4.There are several reasons why you might want to create a custom
+                        hook in React:
+                    </h1>
+                    <p className=" bg-light p-4">
+
+                        <b>Reusability:</b> Custom hooks allow you to reuse code across different components. You can extract common logic and functionality into a custom hook, which can then be reused in different components.
+                        <br></br><br></br>
+                        <b>Abstraction:</b> Custom hooks can help to abstract away complex functionality, making it easier to use and understand. You can encapsulate complex logic and functionality inside a custom hook, which can then be used in a more simplified manner.
+                        <br></br><br></br>
+                        <b>Separation of concerns:</b> Custom hooks can help to separate concerns between different parts of your application. You can extract logic related to a specific feature or functionality into a custom hook, which can then be used independently of other parts of your application.
+                        <br></br><br></br>
+                        <b>State management:</b> Custom hooks can help to manage state in a more efficient and organized way. You can use custom hooks to manage different types of state, such as form state, UI state, or application state.
+                        <br></br><br></br>
+                        <b>Testing:</b> Custom hooks can be more easily tested than logic embedded within a component. By extracting logic into a custom hook, you can test the logic independently of the component, making it easier to maintain and update over time.
+                        <br></br><br></br>
+                        Overall, custom hooks can provide a more modular and scalable approach to building React applications, making it easier to manage complex logic and state over time.
+                    </p>
+                </div>
+
+
 
             </div>
         </div>
