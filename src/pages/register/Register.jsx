@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2'
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
@@ -33,6 +34,10 @@ const Register = () => {
             .then((result) => {
                 const createdUser = result.user;
                 console.log(createdUser);
+
+                updateProfile(createdUser, {
+                    displayName: name, photoURL: photo
+                });
                 form.reset();
                 Swal.fire(
                     'Success!',
