@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import LazyLoad from 'react-lazy-load';
 
 const PostSection = () => {
     return (
@@ -15,7 +16,9 @@ const PostSection = () => {
                 </div>
             </div>
             <div className="col-md-6 text-center">
-                <img className='img-fluid' src='https://static.vecteezy.com/system/resources/previews/002/882/415/original/vertical-poster-with-traditional-indian-meals-free-vector.jpg' alt=" indian cuisine image" />
+                <LazyLoad offset={50}>
+                    <img className='img-fluid' src='https://static.vecteezy.com/system/resources/previews/002/882/415/original/vertical-poster-with-traditional-indian-meals-free-vector.jpg' alt=" indian cuisine image" />
+                </LazyLoad>
             </div>
         </div>
     );

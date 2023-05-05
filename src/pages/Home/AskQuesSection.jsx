@@ -1,11 +1,17 @@
 import React from 'react';
+import LazyLoad from 'react-lazy-load';
+import './AskQuesSection.css'
 
 const AskQuesSection = () => {
     return (
         <div className='container'>
             <div className="row bg-dark">
                 <div className="col-md-6 p-4">
-                    <img className='img-fluid ' src="https://www.pngmart.com/files/5/Indian-Food-PNG-Photos.png" />
+                    <LazyLoad offset={50}>
+                        <img className='img-fluid ' src="https://www.pngmart.com/files/5/Indian-Food-PNG-Photos.png" />
+                    </LazyLoad>
+
+
 
                 </div>
                 <div className="col-md-6 d-flex justify-content-center align-items-center text-center">
