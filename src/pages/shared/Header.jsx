@@ -17,7 +17,7 @@ const Header = () => {
 
     return (
         <div>
-            <Navbar className='px-4' bg="light" expand="lg">
+            <Navbar className='px-4 header-background' expand="lg">
                 <Container className='py-3'>
                     <Navbar.Brand className='fw-bold'> <span className="text-success">Taste</span>  <span className="text-danger">Tracker</span>     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
